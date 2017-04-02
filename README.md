@@ -1,4 +1,4 @@
-#**Traffic Sign Recognition**
+# **Traffic Sign Recognition**
 
 **Build a Traffic Sign Recognition Project**
 ---
@@ -12,7 +12,7 @@ The goals / steps of this project are the following:
 
 
 ---
-###Writeup / README
+### Writeup / README
 
 You're reading it! and here is a link to my [project code](https://github.com/musabafzal/Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
@@ -30,7 +30,7 @@ signs data set:
 * The shape of a traffic sign image is 32x32x3
 * The number of unique classes/labels in the data set is 43
 
-####2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
+#### 2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 
 The code for this step is contained in the third code cell of the IPython notebook.  
 
@@ -39,9 +39,9 @@ I can try to correct it by generating fake data for the classes with less number
 
 ![alt text](images/dataset_histogram.png)
 
-###Design and Test a Model Architecture
+### Design and Test a Model Architecture
 
-####1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
+#### 1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
 
 The code for this step is contained in the fourth code cell of the IPython notebook.
 
@@ -53,11 +53,11 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 As a last step, I normalized the image data between .1 and .9, so that I could keep numerical stability. This scales down the disparity within the data. Using .1 also avoids any potential problems incurred by allowing the data down to zero which can prove harmful for our model.
 
-####2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets.
+#### 2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets.
 The data was also shuffled so that the data for a class will not be clustered together.
 My final training set had 34799 number of images. My validation set and test set had 4410 and 12630 number of images.
 
-####3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 The code for my final model is located in the fifth cell of the ipython notebook.
 
@@ -85,7 +85,7 @@ My final model consisted of the following layers:
 
 
 
-####4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 The code for training the model is located in the sixth cell of the ipython notebook.
 
@@ -93,7 +93,7 @@ I utilized the AdamOptimizer from within TensorFLow to optimize. I tried a few d
 
 For the model hyperparameters, I stuck with a mean of 0 and standard deviation/sigma of 0.1. I also choose a learning rate of 0.005 for the first 60% of the iterations and then I dropped it down to 0.001 as it performed best for me because the model need to minimize the loss quickly at first and then slow down to reach an optimal minimum point.
 
-####5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 The code for calculating the accuracy of the model is located in the sixth cell of the Ipython notebook.
 
@@ -101,9 +101,9 @@ Firstly, I modified the Lenet architecture to different combinations of hidden a
 
 After that, I added dropout technique in my fully connected layers of the neural network because I realized the network was over fitting, I experimented with different keep probabilities of the dropout layer and reached to the conclusion that 0.65 keep probability works best and improved the accuracy to around 96% on my validation set and 93% on my test set. I also kept the learning rate 0.005 for first 60% of the epochs and then dropped it down 0.001 for the rest which made my network more stable.
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose atleast five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Choose atleast five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are six German traffic signs that I found on the web:
 
@@ -114,7 +114,7 @@ Here are six German traffic signs that I found on the web:
 ![alt text](new_images/120_kmh.jpg)
 ![alt text](new_images/stop_sign.jpg)
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
+#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
 
 The code for making predictions on my final model is located in the eighth cell of the Ipython notebook.
 
@@ -132,7 +132,7 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 6 of the 6 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 93.1%.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
 
 The code for making predictions on my final model is located in the eighth and last cell of the Ipython notebook.
 
