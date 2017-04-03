@@ -32,7 +32,7 @@ signs data set:
 
 #### 2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 
-The code for this step is contained in the third code cell of the IPython notebook.  
+The code for this step is contained in the third code cell of the IPython notebook.
 
 Here is an exploratory visualization of the data set. It is a bar chart visualizing the number of images present in the dataset of each of the 43 unique classes. The number of images for the classes vary by a large margin meaning a skewed dataset which can affect the results of our network.
 I can try to correct it by generating fake data for the classes with less number of examples to lessen the skewness of the data but I will first check the model with the existing dataset and check the accuracy.
@@ -113,6 +113,18 @@ Here are six German traffic signs that I found on the web:
 ![alt text](new_images/road_work.jpg)
 ![alt text](new_images/120_kmh.jpg)
 ![alt text](new_images/stop_sign.jpg)
+
+The first image might be difficult to classify because the speed limit signs are pretty much the same and the size of the sign in the image may be different than the training set.
+
+The second image might be difficult to classify because the size of the sign in the image may be different than the training set and the brightness or contrast of the image may be different than the images present in the training set.
+
+The third image might be difficult to classify because the size of the sign in the image may be different than the training set and the brightness or contrast of the image may be different than the images present in the training set.
+
+The fourth image might be difficult to classify because the size of the sign in the image may be different than the training set and the brightness is different than the images present in the training set.
+
+The fifth image might be difficult to classify because the speed limit signs are pretty much the same and the size of the sign in the image may be different than the training set.
+
+The sixth image might be difficult to classify because the size of the sign in the image may be different than the training set and the brightness or contrast of the image may be different than the images present in the training set.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
 
